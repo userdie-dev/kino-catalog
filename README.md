@@ -1,64 +1,68 @@
-# Nuxt Starter Template
+# Kino Katalog
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+Каталог фильмов, сериалов и актёров на [Nuxt 4](https://nuxt.com) и [Nuxt UI 4](https://ui.nuxt.com), данные — из [TMDB API](https://www.themoviedb.org/documentation/api). Интерфейс на русском языке.
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+## Возможности
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+- Главная страница с подборками: популярные и высокорейтинговые фильмы, фильмы в прокате, ожидаемые премьеры, популярные сериалы и актёры.
+- Списки фильмов (`/movies`), сериалов (`/tv`) и актёров (`/actors`) с переключением режима (популярное / топ рейтинга) и поиском.
+- Страницы фильма, сериала и актёра: описание, актёрский состав, фильмография, похожие тайтлы, трейлер.
+- Личный список сохранённых фильмов (`/saved`), хранится локально в браузере.
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+## Стек
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+- [Nuxt 4](https://nuxt.com) + [Nuxt UI 4](https://ui.nuxt.com) + Tailwind CSS 4
+- [tmdb-js-web](https://www.npmjs.com/package/tmdb-js-web) — запросы к TMDB напрямую из браузера
+- Vitest + Vue Test Utils для тестов
 
-## Quick Start
+## Настройка
 
-```bash [Terminal]
-npm create nuxt@latest -- -t ui
-```
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
-
-## Setup
-
-Make sure to install the dependencies:
+Установите зависимости:
 
 ```bash
 pnpm install
 ```
 
-## Development Server
+Создайте файл `.env` на основе `.env.example` и укажите свой TMDB API-ключ (v4 Read Access Token):
 
-Start the development server on `http://localhost:3000`:
+```bash
+NUXT_PUBLIC_TMDB_API_KEY=your_tmdb_read_access_token
+```
+
+## Разработка
+
+Запуск дев-сервера на `http://localhost:3000`:
 
 ```bash
 pnpm dev
 ```
 
-## Production
+## Продакшн
 
-Build the application for production:
+Сборка приложения:
 
 ```bash
 pnpm build
 ```
 
-Locally preview production build:
+Локальный просмотр production-сборки:
 
 ```bash
 pnpm preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Подробнее — в [документации по деплою Nuxt](https://nuxt.com/docs/getting-started/deployment).
 
-## Renovate integration
+## Тесты и линтинг
 
-Install [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) on your repository and you are good to go.
+```bash
+pnpm test          # запуск тестов
+pnpm test:watch    # тесты в watch-режиме
+pnpm test:coverage # тесты с покрытием
+pnpm lint          # линтинг
+pnpm typecheck     # проверка типов
+```
+
+## Renovate
+
+Установите [Renovate GitHub app](https://github.com/apps/renovate/installations/select_target) на репозиторий — конфигурация уже есть в `renovate.json`.
