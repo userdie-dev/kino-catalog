@@ -1,0 +1,36 @@
+{
+  "name": "kino-katalog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "@iconify-json/lucide": "^1.2.123",
+    "@iconify-json/simple-icons": "^1.2.93",
+    "@nuxt/ui": "^4.10.0",
+    "date-fns": "^4.4.0",
+    "nuxt": "^4.5.2",
+    "tailwindcss": "^4.3.3",
+    "tmdb-js-web": "^1.3.2"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/test-utils": "^4.1.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "@vue/test-utils": "^2.4.11",
+    "eslint": "^10.8.1",
+    "happy-dom": "^20.11.6",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.11",
+    "vue-tsc": "^3.3.10"
+  }
+}
